@@ -51,7 +51,7 @@ namespace ui
         cfg::LoadStrings();
         if(acc::SelectFromPreselectedUser()) acc::CacheSelectedUserIcon();
 
-        pu::ui::render::SetDefaultFont(global_settings.PathForResource("/Roboto-Medium.ttf"));
+        pu::ui::render::SetDefaultFontFromShared(pu::ui::render::SharedFont::ChineseSimplified);
         this->preblv = 0;
         this->seluser = {};
         this->preisch = false;

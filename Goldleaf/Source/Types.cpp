@@ -35,7 +35,7 @@ namespace consts
 
 std::string LanguageToString(Language lang)
 {
-    std::string langstr = "en"; // Default
+    std::string langstr = "cn"; // Default
     switch(lang)
     {
         case Language::English:
@@ -50,6 +50,8 @@ std::string LanguageToString(Language lang)
             return "it";
         case Language::Dutch:
             return "nl";
+        case Language::Chinese:
+            return "cn";
         default:
             break;
     }
@@ -58,13 +60,14 @@ std::string LanguageToString(Language lang)
 
 Language StringToLanguage(std::string str)
 {
-    auto lang = Language::English;
+    auto lang = Language::Chinese;
     if(str == "en") lang = Language::English;
     else if(str == "es") lang = Language::Spanish;
     else if(str == "de") lang = Language::German;
     else if(str == "fr") lang = Language::French;
     else if(str == "it") lang = Language::Italian;
     else if(str == "nl") lang = Language::Dutch;
+    else if(str == "cn") lang = Language::Chinese;
     return lang;
 }
 

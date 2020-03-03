@@ -14,12 +14,12 @@
       <Pane fx:id="MainPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0">
          <children>
             <JFXProgressBar fx:id="ProgressBar" layoutX="29.0" layoutY="350.0" prefHeight="4.0" prefWidth="337.0" />
-            <Label fx:id="USBStatusLabel" layoutX="26.0" layoutY="369.0" text="Starting Quark..." />
+            <Label fx:id="USBStatusLabel" layoutX="26.0" layoutY="369.0" text="已启动Quark..." />
             <JFXTextArea fx:id="LogArea" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="276.0" prefWidth="370.0" />
             <JFXListView fx:id="PathList" layoutX="397.0" layoutY="58.0" prefHeight="320.0" prefWidth="485.0" />
-            <JFXButton fx:id="NewPathButton" layoutX="397.0" layoutY="14.0" prefHeight="32.0" prefWidth="220.0" text="Add new path" />
-            <JFXToggleButton fx:id="ShowLogsToggle" layoutX="-9.0" layoutY="292.0" prefHeight="3.0" prefWidth="175.0" text="Show logs" />
-            <JFXButton fx:id="PathRemoveButton" layoutX="630.0" layoutY="14.0" prefHeight="32.0" prefWidth="250.0" text="Remove selected path" />
+            <JFXButton fx:id="NewPathButton" layoutX="397.0" layoutY="14.0" prefHeight="32.0" prefWidth="220.0" text="添加新路径" />
+            <JFXToggleButton fx:id="ShowLogsToggle" layoutX="-9.0" layoutY="292.0" prefHeight="3.0" prefWidth="175.0" text="显示日志" />
+            <JFXButton fx:id="PathRemoveButton" layoutX="630.0" layoutY="14.0" prefHeight="32.0" prefWidth="250.0" text="删除已选路径" />
          </children>
       </Pane>
    </children>

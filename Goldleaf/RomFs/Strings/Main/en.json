@@ -401,5 +401,11 @@
     "Change emulation state",
     "Selected amiibo",
     "An error ocurred attempting to access emuiibo:",
-    "emuiibo isn't present or loaded."
+    "emuiibo isn't present or loaded.",
+    "Select file from PC",
+    "Only emuiibo 0.4.0 or newer is supported",
+    "emuiibo management",
+    "Loading status...",
+    "Web browser",
+    "Use the console's web browser library applet."
 ]

@@ -109,8 +109,8 @@ public class MainController
             if(dir != null)
             {
                 JFXDialogLayout lyt = new JFXDialogLayout();
-                lyt.setHeading(new Text("Quark - Add special path"));
-                lyt.setBody(new Text("Set the special path's name.\n(leave the box empty to cancel)"));
+                lyt.setHeading(new Text("Quark - 添加特定路径"));
+                lyt.setBody(new Text("设置特定路径的名称.\n(保持为空则取消)"));
 
                 JFXAlert<Void> al = new JFXAlert<>((Stage)MainPane.getScene().getWindow());
                 al.initModality(Modality.APPLICATION_MODAL);
@@ -119,7 +119,7 @@ public class MainController
                 JFXTextField tf = new JFXTextField();
                 tf.setAlignment(Pos.BOTTOM_LEFT);
 
-                JFXButton ok = new JFXButton("Ok");
+                JFXButton ok = new JFXButton("确定");
                 ok.setAlignment(Pos.BOTTOM_RIGHT);
                 ok.setOnAction(event2 ->
                 {

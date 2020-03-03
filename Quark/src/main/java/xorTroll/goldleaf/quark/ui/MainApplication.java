@@ -137,7 +137,7 @@ public class MainApplication extends Application
         primaryStage.getIcons().add(new Image(getClass().getClassLoader().getResource("Icon.png").toExternalForm()));
         primaryStage.setResizable(false);
         stage = primaryStage;
-        stage.setTitle("Quark v" + QuarkVer.toString() + " - Goldleaf's USB client");
+        stage.setTitle("Quark v" + QuarkVer.toString() + " - Goldleaf USB 客户端");
         stage.setScene(scene);
 
         Task<Void> usbtask = new Task<Void>()
@@ -148,13 +148,13 @@ public class MainApplication extends Application
                 Optional<USBInterface> intf = USBInterface.createInterface(0);
                 if(!intf.isPresent())
                 {
-                    showDialog("USB fail", "No USB connection was found. Check the following:\n\n - Is the console connected properly to this system?\n - Are you sure Goldleaf is open? \n - Is a small USB icon shown above?", "Ok", true);
+                    showDialog("USB错误", "USB未连接,检查以下内容:\n\n - Switch是否正确连接到此系统?\n - Goldleaf是否已打开? \n - Goldleaf上面是否显示了一个小USB图标?", "确定", true);
                 }
                 usbInterface = intf.get();
-                if(usbInterface.productVersion == null) showDialog("Connection issues", "The connection found doesn't seem to be Goldleaf. Check the following:\n\n - Is the console connected properly to this system?\n - Are you sure Goldleaf is open? \n - Is a small USB icon shown above?", "Ok", true);
-                if(usbInterface.productVersion.olderThan(MinGoldleafVer)) showDialog("Outdated Goldleaf", "The Goldleaf Quark connected to is outdated.\nPlease update to v0.8 or higher.", "Ok", true);
-                if(usbInterface.isDevVersion) showDialog("Development version", "The connected Goldleaf (v" + usbInterface.productVersion.toString() + ") is a development build.\nThis build might be unstable. Use it at your own risk!", "Ok", false);
-                updateMessage("Connected to Goldleaf v" + usbInterface.productVersion.toString() + (usbInterface.isDevVersion ? " (dev build)" : "") + " - Processing USB input...");
+                if(usbInterface.productVersion == null) showDialog("连接问题", "找到的连接似乎不是Goldleaf。检查以下内容:\n\n - Switch是否正确连接到此系统?\n - Goldleaf是否已打开? \n - Goldleaf上面是否显示了一个小USB图标?", "确定", true);
+                if(usbInterface.productVersion.olderThan(MinGoldleafVer)) showDialog("Goldleaf版本过低", "连接到Quark的Goldleaf版本过低.\n请更新到v0.8或更高版本.", "确定", true);
+                if(usbInterface.isDevVersion) showDialog("开发版本", "已连接Goldleaf (v" + usbInterface.productVersion.toString() + ") 开发版.\n这个版本可能不稳定.使用它的风险由你自己承担!", "确定", false);
+                updateMessage("已连接Goldleaf v" + usbInterface.productVersion.toString() + (usbInterface.isDevVersion ? " (开发版)" : "") + " - 处理USB输入中...");
                 Vector<String> drives = null;
                 while(true)
                 {
@@ -163,11 +163,11 @@ public class MainApplication extends Application
                     {
                         usbInterface.finalize();
                         usbInterface = null;
-                        showDialog("Bad USB response", "USB isn't responding corrently (Goldleaf has been closed?, USB cable stopped working?)\n\n - If you want to reconnect, close this dialog and Quark will attempt to do so.\n - If no connection is found again Quark will close.\n\n - If you want to exit Quark, close this dialog.", "Ok", false);
+                        showDialog("USB响应错误", "USB没有正确响应 (Goldleaf是否已经关闭?, USB线停止工作?)\n\n - 关闭此对话框，Quark将尝试重新连接.\n - 如果再次无法连接，Quark将关闭.\n\n - 如果要退出Quark, 请关闭此对话框.", "确定", false);
                         Optional<USBInterface> intf2 = USBInterface.createInterface(0);
                         if(intf2.isPresent())
                         {
-                            updateMessage("Reconnected! Processing USB input from Goldleaf...");
+                            updateMessage("已重新连接! 处理来自Goldleaf的USB输入中...");
                             usbInterface = intf2.get();
                             continue;
                         }

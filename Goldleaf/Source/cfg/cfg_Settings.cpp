@@ -85,7 +85,7 @@ namespace cfg
     {
         Settings gset;
         u64 lcode = 0;
-        SetLanguage lang = SetLanguage_ENUS;
+        SetLanguage lang = SetLanguage_ZHCN;
         setGetSystemLanguage(&lcode);
         setMakeLanguage(lcode, &lang);
         switch(lang)
@@ -111,8 +111,11 @@ namespace cfg
             case SetLanguage_NL:
                 gset.custom_lang = Language::Dutch;
                 break;
+            case SetLanguage_ZHCN:
+                gset.custom_lang = Language::Chinese;
+                break;
             default:
-                gset.custom_lang = Language::English;
+                gset.custom_lang = Language::Chinese;
                 break;
         }
         gset.has_custom_lang = false;

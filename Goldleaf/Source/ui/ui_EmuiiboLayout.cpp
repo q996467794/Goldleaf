@@ -128,7 +128,7 @@ namespace ui
                 if(R_SUCCEEDED(rc))
                 {
                     Version otherv = Version::MakeVersion(v.major, v.minor, v.micro);
-                    if(otherv.IsLower(Version::MakeVersion(0, 4, 0))) global_app->ShowNotification("Only emuiibo 0.4.0 or newer is supported.");
+                    if(otherv.IsLower(Version::MakeVersion(0, 4, 0))) global_app->ShowNotification(cfg::strings::Main.GetString(404));
                     else
                     {
                         auto sdex = fs::GetSdCardExplorer();

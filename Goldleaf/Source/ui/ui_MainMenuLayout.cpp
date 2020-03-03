@@ -52,7 +52,7 @@ namespace ui
         this->amiiboMenuItem->SetIcon(global_settings.PathForResource("/Common/Amiibo.png"));
         this->amiiboMenuItem->SetColor(global_settings.custom_scheme.Text);
         this->amiiboMenuItem->AddOnClick(std::bind(&MainMenuLayout::amiiboMenuItem_Click, this));
-        this->emuiiboMenuItem = pu::ui::elm::MenuItem::New("emuiibo management");
+        this->emuiiboMenuItem = pu::ui::elm::MenuItem::New(cfg::strings::Main.GetString(405));
         this->emuiiboMenuItem->SetIcon(global_settings.PathForResource("/Common/Amiibo.png"));
         this->emuiiboMenuItem->SetColor(global_settings.custom_scheme.Text);
         this->emuiiboMenuItem->AddOnClick(std::bind(&MainMenuLayout::emuiiboMenuItem_Click, this));
@@ -95,7 +95,7 @@ namespace ui
 
     void MainMenuLayout::webMenuItem_Click()
     {
-        global_app->LoadMenuData("Web browser", "Browser", "Use the console's web browser library applet.");
+        global_app->LoadMenuData(cfg::strings::Main.GetString(407), "Browser", cfg::strings::Main.GetString(408));
         global_app->GetWebBrowserLayout()->Refresh();
         global_app->LoadLayout(global_app->GetWebBrowserLayout());
     }
@@ -128,7 +128,7 @@ namespace ui
 
     void MainMenuLayout::emuiiboMenuItem_Click()
     {
-        global_app->LoadMenuData("emuiibo manager", "Emuiibo", "Loading status...");
+        global_app->LoadMenuData(cfg::strings::Main.GetString(405), "Emuiibo", cfg::strings::Main.GetString(406));
         global_app->LoadLayout(global_app->GetEmuiiboLayout());
         global_app->GetEmuiiboLayout()->Reload();
     }
